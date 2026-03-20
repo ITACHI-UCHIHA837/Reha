@@ -1,0 +1,100 @@
+
+[
+  {
+    "id": "0",
+    "title": "hhehhhe linen summer dress with belt",
+    "price": 40,
+    "oldPrice": 80,
+    "brand": "puma",
+    "img": "assets/images/products/copo (1).png",
+    "discount": "90% Off",
+    "link":"shop-details.html"
+  }
+  ,
+  {
+    "id": "01",
+    "title": "linen summer dress with belt",
+    "price": 40,
+    "oldPrice": 80,
+    "brand": "puma",
+    "img": "assets/images/products/copo (5).png",
+    "discount": "100% Off",
+    "link":"shop-details.html"
+  },
+  {
+    "id": "02",
+    "title": "hhehhhe linen summer dress with belt",
+    "price": 40,
+    "oldPrice": 80,
+    "brand": "puma",
+    "img": "assets/images/products/copo (7).png",
+    "discount": "10% Off",
+    "link":"shop-details.html"
+  }
+  ,
+  {
+    "id": "03",
+    "title": "hhehhhe linen summer dress with belt",
+    "price": 40,
+    "oldPrice": 80,
+    "brand": "puma",
+    "img": "assets/images/products/copo (3).png",
+    "discount": "100% Off",
+    "link":"shop-details.html"
+  }
+  ,
+  {
+    "id": "04",
+    "title": "hhehhhe linen summer dress with belt",
+    "price": 40,
+    "oldPrice": 80,
+    "brand": "puma",
+    "img": "assets/images/products/copo (2).png",
+    "discount": "100% Off",
+    "link":"shop-details.html"
+  }
+  ,
+  {
+    "id": "05",
+    "title": "hhehhhe linen summer dress with belt",
+    "price": 40,
+    "oldPrice": 80,
+    "brand": "puma",
+    "img": "assets/images/products/copo.png",
+    "discount": "100% Off",
+    "link":"shop-details.html"
+  }
+  ,
+  {
+    "id": "06",
+    "title": "hhehhhe linen summer dress with belt",
+    "price": 40,
+    "oldPrice": 80,
+    "brand": "sadi",
+    "img": "assets/images/products/copo (4).png",
+    "discount": "100% Off",
+    "link":"shop-details.html"
+  }
+  ,
+  {
+    "id": "07",
+    "title": "hhehhhe linen summer dress with belt",
+    "price": 40,
+    "oldPrice": 80,
+    "brand": "puma",
+    "img": "assets/images/products/copo (8).png",
+    "discount": "100% Off",
+    "link":"shop-details.html"
+  }
+  ,
+  {
+    "id": "08",
+    "title": "hhehhhe linen summer dress with belt",
+    "price": 40,
+    "oldPrice": 80,
+    "brand": "puma",
+    "img": "assets/images/products/Gemi.jpeg",
+    "discount": "100% Off",
+    "link":"shop-details.html"
+  }
+]
