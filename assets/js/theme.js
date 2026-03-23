@@ -59,11 +59,14 @@
         closeIcon = $('.navbar-close');
 
         // navbar toggler
-
-        navbarToggler.on('click', function() {
-            navbarToggler.toggleClass('active');
-            navMenu.toggleClass('menu-on');
-        });
+            $(document).on('click', '.navbar-toggler', function() {
+    $('.pesco-nav-menu').toggleClass('menu-on');
+    $(this).toggleClass('active');
+});  
+        // navbarToggler.on('click', function() {
+        //     navbarToggler.toggleClass('active');
+        //     navMenu.toggleClass('menu-on');
+        // });
 
         // close icon
 
@@ -710,6 +713,112 @@
     
     
 })(window.jQuery);
+
+/////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////
+/////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////FOR liked product visible in whishlist page//////////////
+//////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////
+/////////////////////////////////STORING WHICH PRODUCT IS WHISHLISTED/////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////
+/////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////
+/////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////
+document.addEventListener("DOMContentLoaded", function(){
+
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+updateCounter();
+activateHearts();
+
+/* HEART CLICK */
+
+document.addEventListener("click", function(e){
+
+let btn = e.target.closest(".wishlist-toggle");
+if(!btn) return;
+
+e.preventDefault();
+
+let card = btn.closest(".product-card");
+
+let id = card.dataset.id;
+let title = card.querySelector(".title a")?.innerText;
+let price = card.querySelector(".new-price")?.innerText;
+let dis = card.querySelector(".discount")?.innerText;
+let img = card.querySelector("img")?.src;
+
+let exist = wishlist.find(p => p.id === id);
+
+if(exist){
+
+wishlist = wishlist.filter(p => p.id !== id);
+btn.classList.remove("wishlist-active");
+
+/* remove from wishlist page instantly */
+
+let container = document.getElementById("wishlist-products");
+if(container) card.remove();
+
+}else{
+
+wishlist.push({id,title,price,img,dis});
+btn.classList.add("wishlist-active");
+
+}
+
+localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+updateCounter();
+
+});
+
+
+/* FUNCTIONS */
+
+function activateHearts(){
+
+document.querySelectorAll(".product-card").forEach(function(card){
+
+let id = card.dataset.id;
+let heart = card.querySelector(".wishlist-toggle");
+
+if(!heart) return;
+
+if(wishlist.find(p => p.id === id)){
+heart.classList.add("wishlist-active");
+}
+
+});
+
+}
+
+function updateCounter(){
+
+let count = document.getElementById("wishlist-count");
+if(count) count.innerText = wishlist.length;
+
+}
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////PRODUCT ////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -850,96 +959,6 @@ setTimeout(() => {
 
 
 
-/////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////
-/////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////FOR liked product visible in whishlist page//////////////
-//////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////
-/////////////////////////////////STORING WHICH PRODUCT IS WHISHLISTED/////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////
-/////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////
-/////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////
-document.addEventListener("DOMContentLoaded", function(){
-
-let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-
-updateCounter();
-activateHearts();
-
-/* HEART CLICK */
-
-document.addEventListener("click", function(e){
-
-let btn = e.target.closest(".wishlist-toggle");
-if(!btn) return;
-
-e.preventDefault();
-
-let card = btn.closest(".product-card");
-
-let id = card.dataset.id;
-let title = card.querySelector(".title a")?.innerText;
-let price = card.querySelector(".new-price")?.innerText;
-let dis = card.querySelector(".discount")?.innerText;
-let img = card.querySelector("img")?.src;
-
-let exist = wishlist.find(p => p.id === id);
-
-if(exist){
-
-wishlist = wishlist.filter(p => p.id !== id);
-btn.classList.remove("wishlist-active");
-
-/* remove from wishlist page instantly */
-
-let container = document.getElementById("wishlist-products");
-if(container) card.remove();
-
-}else{
-
-wishlist.push({id,title,price,img,dis});
-btn.classList.add("wishlist-active");
-
-}
-
-localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
-updateCounter();
-
-});
-
-
-/* FUNCTIONS */
-
-function activateHearts(){
-
-document.querySelectorAll(".product-card").forEach(function(card){
-
-let id = card.dataset.id;
-let heart = card.querySelector(".wishlist-toggle");
-
-if(!heart) return;
-
-if(wishlist.find(p => p.id === id)){
-heart.classList.add("wishlist-active");
-}
-
-});
-
-}
-
-function updateCounter(){
-
-let count = document.getElementById("wishlist-count");
-if(count) count.innerText = wishlist.length;
-
-}
-
-});
-
-
 
 
 
@@ -997,7 +1016,9 @@ fetch("navbar.html")
 .then(res => res.text())
 .then(data => {
   document.getElementById("navbar").innerHTML = data;
-  
+   if (typeof mainMenu === "function") {
+    mainMenu();
+  }
   setTimeout(() => {
     if (typeof AOS !== "undefined") {
    //   AOS.refresh();
