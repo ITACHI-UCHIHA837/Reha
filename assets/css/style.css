@@ -190,7 +190,7 @@ h6 {
   --light-gray: #AEB0B6;
   /* --main-bg: #FFFAF3; */
   --main-bg: #1a1d24;
-  --gray-bg: #4f4f56;
+  --gray-bg: var(--mygry);
   /* --gray-bg: #F9F3F0; */
   --font-16: 16px;
   --font-18: 18px;
@@ -199,6 +199,7 @@ h6 {
   --myblack:#1a1d24;
   --mygold:#f5c059;
   --mygry:#4f4f56;
+  /* --mygry:#F5EDE6; */
   --mywhittext:#ffff;
 
   
@@ -5070,7 +5071,7 @@ button {
 }
 .section-image-box.style-one .experience-box .text .year {
   margin-right: 20px;
-  font: 400 60px var(--heading-font);
+  font:65px var(--heading-font);
   line-height: 60px;
 }
 .section-image-box.style-one .experience-box .text .duration {

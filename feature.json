@@ -1,0 +1,64 @@
+
+[
+  {
+    "id": "0",
+    "title": "  linen summer dress with belt",
+    "price": 40,
+    "oldPrice": 80,
+    "brand": "puma",
+    "img": "assets/images/products/copo (1).png",
+    "discount": "",
+    "discountclass": "none",
+    "link":"shop-details.html",
+    "category":"grown"
+  }
+  ,
+  {
+    "id": "01",
+    "title": "linen summer dress with belt",
+    "price": 40,
+    "oldPrice": 80,
+    "brand": "puma",
+    "img": "assets/images/products/copo (5).png",
+    "discount": "10 % off",
+    "discountclass": "discount",
+    "link":"shop-details.html"
+  }
+  
+  ,
+  {
+    "id": "01",
+    "title": "linen summer dress with belt",
+    "price": 40,
+    "oldPrice": 80,
+    "brand": "puma",
+    "img": "assets/images/products/copo (5).png",
+    "discount": "10 % off",
+    "discountclass": "discount",
+    "link":"shop-details.html"
+  }
+  ,
+  {
+    "id": "01",
+    "title": "linen summer dress with belt",
+    "price": 40,
+    "oldPrice": 80,
+    "brand": "puma",
+    "img": "assets/images/products/copo (5).png",
+    "discount": "10 % off",
+    "discountclass": "discount",
+    "link":"shop-details.html"
+  }
+  ,
+  {
+    "id": "01",
+    "title": "linen summer dress with belt",
+    "price": 40,
+    "oldPrice": 80,
+    "brand": "puma",
+    "img": "assets/images/products/copo (5).png",
+    "discount": "10 % off",
+    "discountclass": "discount",
+    "link":"shop-details.html"
+  }
+]

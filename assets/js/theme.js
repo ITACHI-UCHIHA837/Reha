@@ -817,8 +817,77 @@ if(count) count.innerText = wishlist.length;
 
 
 
+////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////feature product indexpage//////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+document.addEventListener("DOMContentLoaded", function () {
+    
+    fetch("feature.json")
+    .then(res => res.json())
+    .then(data => {
+        
+        let container = document.getElementById("feature-product-container");
+        
+        data.forEach(p => {
+            
+            container.innerHTML += `
+                 <div class="col-xl-3 product-card"
+            data-brand="${p.brand}"
+            data-price="${p.price}"
+            data-id="${p.id}">
+               <div class="product-item style-three" data-aos="fade-up" data-aos-duration="900">
+                        <div class="product-thumbnail">
+                            <img src="${p.img}" alt="Products">
+                            <div class="${p.discountclass}">${p.discount}</div>
+                            <div class="hover-content">
+                                <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                             
+                                <a href="${p.img}" class="img-popup icon-btn"><i
+                                        class="fa fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-info-wrap">
+                            <div class="product-info">
+                                <div class="product-meta d-flex">
+                                    <span>Category: <a href="#">${p.category}</a></span>
+                                    <ul class="ratings rating4">
+                                        <li><i class="fas fa-star"></i></li>
+                                        <li><i class="fas fa-star"></i></li>
+                                        <li><i class="fas fa-star"></i></li>
+                                        <li><i class="fas fa-star"></i></li>
+                                        <li><i class="fas fa-star"></i></li>
+                                    </ul>
+                                </div>
+                                <h4 class="title"><a href="shop-details.html">${p.title} </a>
+                                </h4>
+                            </div>
+                            <div class="product-price">
+                                <span class="price new-price"><span class="currency"></span>$${p.oldPrice}</span>
+                                <span class="price prev-price"><span class="currency"></span>$${p.price}</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+`;
 
 
+setTimeout(() => {
+  if (typeof AOS !== "undefined") {
+ //   AOS.refresh();
+   AOS.refreshHard(); 
+
+  }
+}, 100);
+});
+
+});
+});
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////PRODUCT ////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
