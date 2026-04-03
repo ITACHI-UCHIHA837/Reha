@@ -891,7 +891,8 @@ button {
     overflow-x: hidden;
     overflow-y: scroll;
     z-index: 9999;
-    background-color: var(--white-color);
+    background-color: var(--main-bg);
+    /* background-color: var(--white-color); */
   }
   .header-navigation .pesco-nav-menu.menu-on {
     left: 0;
@@ -1096,6 +1097,8 @@ button {
   width: 100%;
   padding: 11px 30px 11px 20px;
   border: 1px solid #e1e1e1;
+      background-color: var(--myblack);
+    COLOR: var(--mywhittext);
 }
 .nav-search .form-group {
   position: relative;
