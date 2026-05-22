@@ -832,31 +832,165 @@ document.addEventListener("DOMContentLoaded", function () {
         data.forEach(p => {
             
             container.innerHTML += `
-                 <div class="col-xl-3 product-card"
+<div class="col-xl-3 product-card"
+     data-brand="${p.brand}"
+     data-price="${p.price}"
+     data-id="${p.id}">
+
+  <div class="product-item style-three" data-aos="fade-up" data-aos-duration="900">
+
+    <!-- PRODUCT IMAGE + CAROUSEL -->
+    <div class="product-thumbnail"
+         style="height:450px; overflow:hidden; position:relative;"
+         onmouseover="this.querySelectorAll('.arrow-btn').forEach(btn => btn.style.opacity='1')"
+         onmouseout="this.querySelectorAll('.arrow-btn').forEach(btn => btn.style.opacity='0')">
+
+      <div id="carousel-${p.id}" class="carousel slide"
+           data-bs-ride="carousel"
+           data-bs-touch="true"
+           style="height:100%;">
+
+        <div class="carousel-inner" style="height:100%;">
+
+          ${p.images.map((img, index) => `
+            <div class="carousel-item ${index === 0 ? "active" : ""}" style="height:100%;">
+              <img src="${img}" alt="${p.title}"
+                   style="width:100%; height:100%; object-fit:cover;
+                          transition:transform 0.4s;"
+                   onmouseover="this.style.transform='scale(1.1)'"
+                   onmouseout="this.style.transform='scale(1)'">
+            </div>
+          `).join('')}
+
+        </div>
+
+        <!-- LEFT ARROW -->
+        <button class="carousel-control-prev arrow-btn"
+                type="button"
+                data-bs-target="#carousel-${p.id}"
+                data-bs-slide="prev"
+                style="top:50%; transform:translateY(-50%);
+                       opacity:0; transition:0.3s;">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <!-- RIGHT ARROW -->
+        <button class="carousel-control-next arrow-btn"
+                type="button"
+                data-bs-target="#carousel-${p.id}"
+                data-bs-slide="next"
+                style="top:50%; transform:translateY(-50%);
+                       opacity:0; transition:0.3s;">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+
+      </div>
+
+      <!-- DISCOUNT -->
+      <div class="${p.discountclass}">${p.discount}</div>
+
+      <!-- HOVER ICONS -->
+      <div class="hover-content">
+        <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+        <a href="${p.images[0]}" class="img-popup icon-btn">
+          <i class="fa fa-eye"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- PRODUCT INFO -->
+    <div class="product-info-wrap">
+      <div class="product-info">
+        <div class="product-meta d-flex">
+          <span>Category: <a href="#">${p.category}</a></span>
+          <ul class="ratings rating4">
+            <li><i class="fas fa-star"></i></li>
+            <li><i class="fas fa-star"></i></li>
+            <li><i class="fas fa-star"></i></li>
+            <li><i class="fas fa-star"></i></li>
+            <li><i class="fas fa-star"></i></li>
+          </ul>
+        </div>
+
+        <h4 class="title">
+          <a href="${p.link}">${p.title}</a>
+        </h4>
+      </div>
+
+      <div class="product-price">
+        <span class="price new-price">$${p.oldPrice}</span>
+        <span class="price prev-price">$${p.price}</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+            <!--
+            <div class="col-xl-3  product-card"
             data-brand="${p.brand}"
             data-price="${p.price}"
             data-id="${p.id}">
-               <div class="product-item style-three" data-aos="fade-up" data-aos-duration="900">
-                        <div class="product-thumbnail">
-                            <img src="${p.img}" alt="Products">
+            <div class="product-item style-three" data-aos="fade-up" data-aos-duration="900">
+            
+            <div class="product-thumbnail" style="height:450px; overflow:hidden;">
+            <div id="carousel-${p.id}" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+            ${p.images.map((img, index) => `
+                <div class="carousel-item ${index === 0 ? "active" : ""}">
+                    <img src="${img}" alt="${p.title}"
+                    style=" max-height:500px; object-fit:">
+                        </div>
+                        `).join('')}
+                        </div>
+                        
+                        ${p.images.length > 1 ? `
+                            <button class="carousel-control-prev" style="style="top:50%; transform:translateY(-50%); height:40px;"" type="button" data-bs-target="#carousel-${p.id}" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" ></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel-${p.id}" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            </button>
+      ` : ''}
+  </div>
+  
+  <div class="${p.discountclass}">${p.discount}</div>
+  <div class="hover-content mb-30" >
+  <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+  <a href="${p.images[0]}" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+  </div>
+  </div>
+  
+  -->
+  
+  <!--
+  
+  <div class="col-xl-3 product-card"
+  data-brand="${p.brand}"
+  data-price="${p.price}"
+  data-id="${p.id}">
+  <div class="product-item style-three" data-aos="fade-up" data-aos-duration="900">
+  <div class="product-thumbnail">
+  <img src="${p.img}" alt="Products">
                             <div class="${p.discountclass}">${p.discount}</div>
                             <div class="hover-content">
-                                <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
-                             
-                                <a href="${p.img}" class="img-popup icon-btn"><i
-                                        class="fa fa-eye"></i></a>
+                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                            
+                            <a href="${p.img}" class="img-popup icon-btn"><i
+                            class="fa fa-eye"></i></a>
                             </div>
-                        </div>
-                        <div class="product-info-wrap">
+                            </div>
+                            <div class="product-info-wrap">
                             <div class="product-info">
-                                <div class="product-meta d-flex">
-                                    <span>Category: <a href="#">${p.category}</a></span>
-                                    <ul class="ratings rating4">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
+                            <div class="product-meta d-flex">
+                            <span>Category: <a href="#">${p.category}</a></span>
+                            <ul class="ratings rating4">
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
                                     </ul>
                                 </div>
                                 <h4 class="title"><a href="shop-details.html">${p.title} </a>
@@ -866,10 +1000,15 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span class="price new-price"><span class="currency"></span>$${p.oldPrice}</span>
                                 <span class="price prev-price"><span class="currency"></span>$${p.price}</span>
                             </div>
-                        </div>
+                            </div>
                     </div>
                     </div>
-`;
+
+                    -->
+                    
+                    
+                    
+                    `;
 
 
 setTimeout(() => {
