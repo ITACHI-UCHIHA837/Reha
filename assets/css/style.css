@@ -114,7 +114,7 @@ h6 {
 
 .contact-wrapper .pesco-contact-form .form_control, .contact-wrapper, .testimonial-wrapper-two, .single-brand-item .brand-img, .features-wrapper, .testimonial-slider-two .slick-arrow, .sidebar-banner-widget .banner-widget-content, .sidebar-newsletter-widget, .sidebar-widget, .pesco-comment-area .comment, .blog-details-content .blog-post-item .entry-footer, .blog-post-item.style-three:hover .post-content .theme-btn.style-one, .blog-post-item.style-three, .payment-method-wrapper ul li, .checkout-form .nice-select, .checkout-form .form_control, .cart-sidebar-area .cart-widget.coupon-box-widget form input, .cart-sidebar-area .cart-widget, .cart-wrapper .action-cart .quantity-input, .shop-sidebar-area .product-widget.price-filter-widget .widget-content .ui-widget .ui-state-default, .shop-sidebar-area .product-widget, .shop-details-wrapper .product-info .product-cart-variation .icon-btn, .shop-details-wrapper .product-info .product-cart-variation .quantity-input, .shop-filter, .accordion-item.style-one, .team-item.style-one .member-img .hover-content ul.social-link li a, .product-item.style-three .product-thumbnail .hover-content a, .product-item.style-two, .product-item.style-one .product-thumbnail .hover-content .icon-btn, .iconic-box-item.style-two, .iconic-box-item.icon-left-box .icon, .category-item.style-two, .category-item.style-one .category-content .category-btn, .banner-item.style-two .banner-content span, .main-categories-wrap .categories-dropdown-active, .main-categories-wrap .categories-btn-active, .product-search-category form input, .search-header-main, .sidemenu-wrapper-cart, .white-bg, .preloader {
   /* background-color: var(--white-color); */
-  background-color: var(--mygry);
+  background-color: var(--myblack);
 }
 
 .gray-light-bg, .main-bg {
@@ -2199,6 +2199,7 @@ button {
 .product-item.style-one .product-thumbnail {
   position: relative;
   overflow: hidden;
+  
 }
 .product-item.style-one .product-thumbnail img {
   width: 100%;
@@ -3135,6 +3136,9 @@ button {
 .shop-sidebar-area .product-widget {
   padding: 24px 32px;
   border-radius: 10px;
+  border: 2px solid var(--mygold);
+  /* box-shadow: 0 0px 100px 10px rgba(255, 226, 5, 0.2), 0 6px 2px 0 rgb(255, 234, 2); */
+   box-shadow: 0 0px 8px 1px rgba(255, 225, 1, 0.335)
 }
 .shop-sidebar-area .product-widget h4.widget-title {
   padding-bottom: 12px;
@@ -3453,7 +3457,8 @@ button {
 
 .form-check-input {
   background-color: transparent;
-  border-color: var(--primary-dark-color);
+  /* border-color: var(--primary-dark-color); */
+  border-color: var(--mygold);
 }
 .form-check-input:focus {
   box-shadow: none;
@@ -5555,6 +5560,9 @@ color:red;
 
 .mywhite{
   color: white;
+  background-color: var(--mygold);
+  border-color: #CC0D39;
+
 }
 
 .wishlist-active i{
