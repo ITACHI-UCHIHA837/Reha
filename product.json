@@ -1,100 +1,112 @@
 
-[
-  {
-    "id": "0",
-    "title": "  hehehheehlinen summer dress with belt",
-    "price": 40,
-    "oldPrice": 80,
-    "brand": "Sari",
-    "img": "assets/images/products/copo (1).png",
-    "discount": "90% Off",
-    "link":"shop-details.html"
-  }
-  ,
-  {
-    "id": "01",
-    "title": "linen summer dress with belt",
-    "price": 40,
-    "oldPrice": 80,
-    "brand": "Top",
-    "img": "assets/images/products/copo (5).png",
-    "discount": "100% Off",
-    "link":"shop-details.html"
-  },
-  {
-    "id": "02",
-    "title": "  linen summer dress with belt",
+
+
+
+
+
+
+  [
+{
+    
+    "title": "Midnight Royale",
     "price": 40,
     "oldPrice": 80,
     "brand": "Gown",
-    "img": "assets/images/products/copo (7).png",
+    "img": "assets/images/products/reha Boutique girl/rehaproduct (3).png",
     "discount": "10% Off",
-    "link":"shop-details.html"
+    "link":"shop-details.html",
+    "line":"Black Off-Shoulder Embroidered Ball Gown"
   }
-  ,
-  {
-    "id": "03",
-    "title": "  linen summer dress with belt",
+  ,{
+    
+    "title": "Rosé Élégance",
     "price": 40,
     "oldPrice": 80,
-    "brand": "croptop",
-    "img": "assets/images/products/copo (3).png",
-    "discount": "100% Off",
-    "link":"shop-details.html"
+    "brand": "Gown",
+    "img": "assets/images/products/reha Boutique girl/rehaproduct (4).png",
+    "discount": "10% Off",
+    "link":"shop-details.html",
+    "line":"Pink Floral Princess Party Gown"
   }
-  ,
-  {
-    "id": "04",
-    "title": "  linen summer dress with belt",
+  ,{
+    
+    "title": "Ocean Whisper Layered Gown",
     "price": 40,
     "oldPrice": 80,
-    "brand": "puma",
-    "img": "assets/images/products/copo (2).png",
-    "discount": "100% Off",
-    "link":"shop-details.html"
+    "brand": "Gown",
+    "img": "assets/images/products/reha Boutique girl/rehaproduct (5).png",
+    "discount": "10% Off",
+    "link":"shop-details.html",
+    "line":"Blue Printed Luxury Ball Dress"
   }
-  ,
-  {
-    "id": "05",
-    "title": "  linen summer dress with belt",
+,{
+  
+  "title": "Midnight Cyan Flare Gown",
+  "price": 40,
+  "oldPrice": 80,
+  "brand": "Gown",
+    "img": "assets/images/products/reha Boutique girl/rehaproduct (6).png",
+    "discount": "10% Off",
+    "link":"shop-details.html",
+    "line":"Royal Blue Embroidered Evening Gown"
+  }
+,{
+    
+    "title": "The Royal Sapphire Silhouette",
     "price": 40,
     "oldPrice": 80,
-    "brand": "puma",
-    "img": "assets/images/products/copo.png",
-    "discount": "100% Off",
-    "link":"shop-details.html"
+    "brand": "Plazo",
+    "img": "assets/images/products/reha Boutique girl/rehaproduct (7).png",
+    "discount": "10% Off",
+    "link":"shop-details.html",
+    "line":"Teal Cape Sleeve Designer Gown"
   }
-  ,
-  {
-    "id": "06",
-    "title": "  linen summer dress with belt",
+  ,{
+    
+    "title": "Emerald Dynasty",
     "price": 40,
     "oldPrice": 80,
-    "brand": "sadi",
-    "img": "assets/images/products/copo (4).png",
-    "discount": "100% Off",
-    "link":"shop-details.html"
+    "brand": "Gown",
+    "img": "assets/images/products/reha Boutique girl/rehaproduct (8).png",
+    "discount": "10% Off",
+    "link":"shop-details.html",
+    "line":"Dark Green Metallic Princess Dress"
   }
-  ,
-  {
-    "id": "07",
-    "title": "  linen summer dress with belt",
-    "price": 40,
-    "oldPrice": 80,
-    "brand": "puma",
-    "img": "assets/images/products/copo (8).png",
-    "discount": "100% Off",
-    "link":"shop-details.html"
-  }
-  ,
-  {
-    "id": "08",
-    "title": "  linen summer dress with belt",
-    "price": 40,
-    "oldPrice": 80,
-    "brand": "puma",
-    "img": "assets/images/products/Gemi.jpeg",
-    "discount": "100% Off",
-    "link":"shop-details.html"
-  }
+,{
+  
+  "title": "Blush Symphony",
+  "price": 40,
+  "oldPrice": 80,
+  "brand": "Gown",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (9).png",
+  "discount": "10% Off",
+  "link":"shop-details.html",
+  "line":"Pink Layered Midi Party Dress"
+}
+,{
+  
+  "title": "Fuchsia Charm",
+  "price": 40,
+  "oldPrice": 80,
+  "brand": "Gown",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (10).png",
+  "discount": "10% Off",
+  "link":"shop-details.html",
+  "line":"Hot Pink Sleeveless Short Dress"
+}
+,{
+  
+  "title": "Ivory Garden",
+  "price": 40,
+  "oldPrice": 80,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (11).png",
+  "discount": "10% Off",
+  "link":"shop-details.html",
+  "line":"White Top Floral Long Skirt Set"
+}
+
+
+
+
 ]

@@ -1075,7 +1075,9 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="product-info">
             <h4 class="title">
             <a href="shop-details.html">${p.title}</a>
+
             </h4>
+            <p>${p.line}</p>
             </div>
             
             <div class="product-price">

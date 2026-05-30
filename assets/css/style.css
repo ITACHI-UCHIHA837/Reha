@@ -3138,7 +3138,7 @@ button {
   border-radius: 10px;
   border: 2px solid var(--mygold);
   /* box-shadow: 0 0px 100px 10px rgba(255, 226, 5, 0.2), 0 6px 2px 0 rgb(255, 234, 2); */
-   box-shadow: 0 0px 8px 1px rgba(255, 225, 1, 0.335)
+
 }
 .shop-sidebar-area .product-widget h4.widget-title {
   padding-bottom: 12px;
