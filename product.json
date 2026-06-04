@@ -1,16 +1,9 @@
-
-
-
-
-
-
-
   [
 {
-    
+        "id": "0",
     "title": "Midnight Royale",
-    "price": 40,
-    "oldPrice": 80,
+    "price": 3599.00,
+    "oldPrice": 3999.00,
     "brand": "Gown",
     "img": "assets/images/products/reha Boutique girl/rehaproduct (3).png",
     "discount": "10% Off",
@@ -18,10 +11,10 @@
     "line":"Black Off-Shoulder Embroidered Ball Gown"
   }
   ,{
-    
+        "id": "1",
     "title": "Rosé Élégance",
-    "price": 40,
-    "oldPrice": 80,
+    "price": 3599.00,
+    "oldPrice": 3999.00,
     "brand": "Gown",
     "img": "assets/images/products/reha Boutique girl/rehaproduct (4).png",
     "discount": "10% Off",
@@ -29,10 +22,10 @@
     "line":"Pink Floral Princess Party Gown"
   }
   ,{
-    
-    "title": "Ocean Whisper Layered Gown",
-    "price": 40,
-    "oldPrice": 80,
+        "id": "2",
+        "title": "Ocean Whisper Layered Gown",
+        "price": 3599.00,
+    "oldPrice": 3999,
     "brand": "Gown",
     "img": "assets/images/products/reha Boutique girl/rehaproduct (5).png",
     "discount": "10% Off",
@@ -41,20 +34,22 @@
   }
 ,{
   
+  "id": "3",
   "title": "Midnight Cyan Flare Gown",
-  "price": 40,
-  "oldPrice": 80,
+  "price": 3599.00,
+  "oldPrice": 3999.00,
   "brand": "Gown",
-    "img": "assets/images/products/reha Boutique girl/rehaproduct (6).png",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (6).png",
     "discount": "10% Off",
     "link":"shop-details.html",
     "line":"Royal Blue Embroidered Evening Gown"
   }
-,{
+  ,{
     
+    "id": "4",
     "title": "The Royal Sapphire Silhouette",
-    "price": 40,
-    "oldPrice": 80,
+    "price": 3599.00,
+    "oldPrice": 3999.00,
     "brand": "Plazo",
     "img": "assets/images/products/reha Boutique girl/rehaproduct (7).png",
     "discount": "10% Off",
@@ -63,9 +58,10 @@
   }
   ,{
     
+    "id": "5",
     "title": "Emerald Dynasty",
-    "price": 40,
-    "oldPrice": 80,
+    "price": 3599.00,
+    "oldPrice": 3999.00,
     "brand": "Gown",
     "img": "assets/images/products/reha Boutique girl/rehaproduct (8).png",
     "discount": "10% Off",
@@ -74,9 +70,10 @@
   }
 ,{
   
+  "id": "6",
   "title": "Blush Symphony",
-  "price": 40,
-  "oldPrice": 80,
+  "price": 3599.00,
+  "oldPrice": 3999.00,
   "brand": "Gown",
   "img": "assets/images/products/reha Boutique girl/rehaproduct (9).png",
   "discount": "10% Off",
@@ -85,9 +82,10 @@
 }
 ,{
   
+  "id": "7",
   "title": "Fuchsia Charm",
-  "price": 40,
-  "oldPrice": 80,
+  "price": 3599.00,
+  "oldPrice": 3999.00,
   "brand": "Gown",
   "img": "assets/images/products/reha Boutique girl/rehaproduct (10).png",
   "discount": "10% Off",
@@ -96,16 +94,340 @@
 }
 ,{
   
+  "id": "8",
   "title": "Ivory Garden",
-  "price": 40,
-  "oldPrice": 80,
+  "price": 3599.00,
+  "oldPrice": 3999.00,
   "brand": "croptop",
   "img": "assets/images/products/reha Boutique girl/rehaproduct (11).png",
   "discount": "10% Off",
   "link":"shop-details.html",
   "line":"White Top Floral Long Skirt Set"
 }
-
+,
+{
+  "id": 9,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (12).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 10,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (13).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 11,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (14).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 12,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (15).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 13,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (16).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 14,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (17).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 15,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (18).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 16,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (19).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 17,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (20).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 18,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (21).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 19,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (22).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 20,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (23).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 21,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (25).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 22,
+  "title": "Ivory Garden",
+  "price": 3599,
+  "oldPrice": 3999,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (25).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 23,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (26).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 24,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (27).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 25,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (28).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 26,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (29).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 27,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (30).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 28,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (31).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 29,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (32).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 30,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (33).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 31,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (34).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 32,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (35).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 33,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (36).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 34,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (37).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
+,
+{
+  "id": 35,
+  "title": "Ivory Garden",
+  "price": 3599.00,
+  "oldPrice": 3999.00,
+  "brand": "croptop",
+  "img": "assets/images/products/reha Boutique girl/rehaproduct (38).png",
+  "discount": "10% Off",
+  "link": "shop-details.html",
+  "line": "White Top Floral Long Skirt Set"
+}
 
 
 

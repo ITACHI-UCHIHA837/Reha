@@ -725,85 +725,232 @@
 /////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////
 /////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////
 /////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\/////////////
-document.addEventListener("DOMContentLoaded", function(){
+// document.addEventListener("DOMContentLoaded", function(){
 
-let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+// let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-updateCounter();
-activateHearts();
+// updateCounter();
+// activateHearts();
 
-/* HEART CLICK */
+// /* HEART CLICK */
 
-document.addEventListener("click", function(e){
+// document.addEventListener("click", function(e){
 
-let btn = e.target.closest(".wishlist-toggle");
-if(!btn) return;
+// let btn = e.target.closest(".wishlist-toggle");
+// if(!btn) return;
 
-e.preventDefault();
+// e.preventDefault();
 
-let card = btn.closest(".product-card");
+// let card = btn.closest(".product-card");
 
-let id = card.dataset.id;
-let title = card.querySelector(".title a")?.innerText;
-let price = card.querySelector(".new-price")?.innerText;
-let dis = card.querySelector(".discount")?.innerText;
-let img = card.querySelector("img")?.src;
+// let id = card.dataset.id;
+// let title = card.querySelector(".title a")?.innerText;
+// let price = card.querySelector(".new-price")?.innerText;
+// let dis = card.querySelector(".discount")?.innerText;
+// let img = card.querySelector("img")?.src;
 
-let exist = wishlist.find(p => p.id === id);
+// let exist = wishlist.find(p => p.id === id);
 
-if(exist){
+// if(exist){
 
-wishlist = wishlist.filter(p => p.id !== id);
-btn.classList.remove("wishlist-active");
+// wishlist = wishlist.filter(p => p.id !== id);
+// btn.classList.remove("wishlist-active");
 
-/* remove from wishlist page instantly */
+// /* remove from wishlist page instantly */
 
-let container = document.getElementById("wishlist-products");
-if(container) card.remove();
+// let container = document.getElementById("wishlist-products");
+// if(container) card.remove();
 
-}else{
+// }else{
 
-wishlist.push({id,title,price,img,dis});
-btn.classList.add("wishlist-active");
+// wishlist.push({id,title,price,img,dis});
+// btn.classList.add("wishlist-active");
+
+// }
+
+// localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+// updateCounter();
+
+// });
+
+
+// /* FUNCTIONS */
+
+// function activateHearts(){
+
+// document.querySelectorAll(".product-card").forEach(function(card){
+
+// let id = card.dataset.id;
+// let heart = card.querySelector(".wishlist-toggle");
+
+// if(!heart) return;
+
+// if(wishlist.find(p => p.id === id)){
+// heart.classList.add("wishlist-active");
+// }
+
+// });
+
+// }
+
+// function updateCounter(){
+
+// let count = document.getElementById("wishlist-count");
+// if(count) count.innerText = wishlist.length;
+
+// }
+
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+setTimeout(() => {
+    activateHearts();
+}, 200);
+    updateCounter();
+
+    /* HEART CLICK */
+
+    document.addEventListener("click", function (e) {
+
+        let btn = e.target.closest(".wishlist-toggle");
+
+        if (!btn) return;
+
+        e.preventDefault();
+
+        let card = btn.closest(".product-card");
+
+        if (!card) return;
+
+        let id = card.dataset.id;
+
+        let title = card.querySelector(".title a")?.innerText || "";
+
+        let price = card.querySelector(".new-price")?.innerText || "";
+
+        let dis = card.querySelector(".discount")?.innerText || "";
+
+        let img =
+            card.querySelector("img")?.getAttribute("src") ||
+            card.querySelector("img")?.getAttribute("data-src") ||
+            "";
+
+        let exist = wishlist.find(product => product.id === id);
+
+        /* REMOVE */
+
+        if (exist) {
+
+            wishlist = wishlist.filter(product => product.id !== id);
+
+            btn.classList.remove("wishlist-active");
+
+            /* remove instantly from wishlist page */
+
+            let container = document.getElementById("wishlist-products");
+
+            if (container) {
+
+                card.remove();
+
+                /* empty wishlist message */
+
+                if (wishlist.length === 0) {
+
+                    container.innerHTML = `
+                        <div class="empty-wishlist">
+                            Your wishlist is empty
+                        </div>
+                    `;
+                }
+            }
+
+        } else {
+
+            /* ADD */
+
+            wishlist.push({
+                id,
+                title,
+                price,
+                dis,
+                img
+            });
+
+            btn.classList.add("wishlist-active");
+        }
+
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+        updateCounter();
+
+    });
+
+    /* FUNCTIONS */
+
+function activateHearts() {
+
+    let wishlist =
+        JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    document.querySelectorAll(".product-card").forEach(card => {
+
+        let id = card.dataset.id;
+
+        let heart = card.querySelector(".wishlist-toggle");
+
+        if (!heart || !id) return;
+
+        let exist = wishlist.some(item => item.id === id);
+
+        if (exist) {
+
+            heart.classList.add("wishlist-active");
+
+        } else {
+
+            heart.classList.remove("wishlist-active");
+        }
+
+    });
 
 }
 
-localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    // function activateHearts() {
 
-updateCounter();
+    //     document.querySelectorAll(".product-card").forEach(function (card) {
+
+    //         let id = card.dataset.id;
+
+    //         let heart = card.querySelector(".wishlist-toggle");
+
+    //         if (!heart) return;
+
+    //         if (wishlist.find(product => product.id === id)) {
+
+    //             heart.classList.add("wishlist-active");
+
+    //         } else {
+
+    //             heart.classList.remove("wishlist-active");
+    //         }
+    //     });
+    // }
+
+    function updateCounter() {
+
+        let count = document.getElementById("wishlist-count");
+
+        if (count) {
+
+            count.innerText = wishlist.length;
+        }
+    }
 
 });
-
-
-/* FUNCTIONS */
-
-function activateHearts(){
-
-document.querySelectorAll(".product-card").forEach(function(card){
-
-let id = card.dataset.id;
-let heart = card.querySelector(".wishlist-toggle");
-
-if(!heart) return;
-
-if(wishlist.find(p => p.id === id)){
-heart.classList.add("wishlist-active");
-}
-
-});
-
-}
-
-function updateCounter(){
-
-let count = document.getElementById("wishlist-count");
-if(count) count.innerText = wishlist.length;
-
-}
-
-});
-
-
 
 
 
@@ -1081,8 +1228,8 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
             
             <div class="product-price">
-            <span class="price prev-price">$${p.oldPrice || 80}</span>
-            <span class="price new-price">$${p.price}</span>
+            <span class="price prev-price">₨.${p.oldPrice || 80}</span>
+            <span class="price new-price">₨.${p.price}</span>
             </div>
             </div>
             
@@ -1143,8 +1290,8 @@ document.addEventListener("DOMContentLoaded", function () {
 </h4>
 
 <div class="product-price">
- <span class="price prev-price">$${p.oldPrice}</span>
-<span class="price new-price">$${p.price}</span>
+ <span class="price prev-price">₨.${p.oldPrice}</span>
+<span class="price new-price">₨.${p.price}</span>
 </div>
 </div>
 

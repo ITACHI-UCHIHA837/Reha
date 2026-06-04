@@ -3,8 +3,8 @@
     {
     "id": "0",
     "title": "  linen summer dress with belt",
-    "price": 40,
-    "oldPrice": 80,
+    "price": 2999,
+    "oldPrice": 2699,
     "brand": "puma",
     "img": "assets/images/products/copo (1).png",
     "images": ["assets/images/products/copo (5).png","assets/images/products/copo (1).png"],
@@ -17,8 +17,8 @@
   {
     "id": "01",
     "title": "linen summer dress with belt",
-    "price": 40,
-    "oldPrice": 80,
+    "price": 2999,
+    "oldPrice": 2699,
     "brand": "puma",
     "img": "assets/images/products/copo (5).png",
   "images": ["assets/images/products/copo (2).png","assets/images/products/copo (3).png"],
