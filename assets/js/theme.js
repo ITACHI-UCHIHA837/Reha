@@ -1203,7 +1203,7 @@ document.addEventListener("DOMContentLoaded", function () {
             >
             
             <div class="product-thumbnail">
-            <img src="${p.img}" alt="Products">
+            <img src="${p.img}" alt="Products" lazy="loading" loading="lazy">
             
             <div class="discount">${p.discount || "10% Off"}</div>
             
