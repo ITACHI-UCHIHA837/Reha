@@ -3,8 +3,8 @@
     Template Name: Pesco - eCommerce HTML Template
     URI: site.com 
     Description: Pesco is a clean, modern, and elegant fashion e-commerce HTML template. It allows you to easily create a well-designed e-commerce website that is easily customizable to fit your brand colors and requirements.
-    Author: Pixelfit
-    Author URI: https://themeforest.net/user/pixelfit
+    Author: Reha Boutique
+    Author URI: https://themeforest.net/user/reha boutique
     Version: 1.0 
 
     Note: This is Main Js file
