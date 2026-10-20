@@ -2,54 +2,185 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Info Page</title>
-      <link rel="shortcut icon" href="assets/images/logo/Reha Boutique favicon rrrrrrrrrs1.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reha Boutique - Info Page</title>
+  <link rel="shortcut icon" href="assets/images/logo/Reha Boutique favicon rrrrrrrrrs1.png" type="image/png">
     
   <style>
+    /* GLOBAL STYLES */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #222; /* Dark background */
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      caret-color: transparent;
     }
 
     /* NAVBAR / LINKS */
     .nav {
-      background: #333;
-      padding: 20px;
+      background: #1a1a1a;
+      padding: 15px 20px;
       display: flex;
       flex-wrap: wrap;
-      gap: 40px;
+      gap: 20px;
       position: sticky;
-      top:  0;
-      
+      top: 0;
       align-items: center;
-      
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
-
-  
-    
+    /* Prevents text selection on UI elements */
+.nav a, summary,section,details,li {
+  user-select: none;
+  -webkit-user-select: none; /* For Safari */
+}
+    .nav-logo {
+      margin-right: 20px;
+    }
     .nav a {
-      margin-left:50px ;
       color: #ffb84d;
       text-decoration: none;
       font-weight: bold;
       margin-left: 12px;
-    
+      transition: color 0.3s ease;
+      cursor: pointer;
     }
-
-    .nav a:hover {
+    .nav a:hover, .nav a.active-link {
       text-decoration: underline;
+      color: #f05f5f;
     }
 
-    /* SECTIONS */
+    /* MAIN CONTAINER TO CENTER CONTENT */
+    .main-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    /* SECTIONS (Hidden by default) */
     .section {
-      padding: 80px 20px;
-      border-bottom: 1px solid #ddd;
-      min-height: 100vh;
+      display: none;
+      width: 100%;
+      max-width: 800px;
+    }
+    /* Active Section (Visible) */
+    .section.active {
+      display: block;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* SHADOW BOX */
+    .content-box {
+      background: #2a2a2a; 
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
     h2 {
-      color: #333;
+      color: #ffb84d;
+      text-align: center;
+      font-size: 2em;
+      margin-top: 0;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #f05f5f;
+      padding-bottom: 15px;
+    }
+    
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      color: #fff;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      font-size: 1.1em;
+      line-height: 1.5;
+    }
+    li img {
+      margin-top: 3px;
+      width: 20px;
+    }
+    li a {
+      color: #ffb84d;
+      text-decoration: none;
+    }
+    li a:hover {
+      text-decoration: underline;
+    }
+
+    /* FAQ ACCORDION STYLES */
+    .faq-container h1 {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 30px;
+      color: #ffb84d;
+      border-bottom: 2px solid #f05f5f;
+      padding-bottom: 15px;
+    }
+    .faq-category {
+      font-size: 1.3em;
+      font-weight: bold;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      color: #fff;
+      padding-bottom: 8px;
+    }
+    details {
+      background-color: #404040;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      padding: 15px 20px;
+      transition: background-color 0.3s ease;
+    }
+    details:hover {
+      background-color: #4d4d4d;
+    }
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
+      list-style: none;
+      position: relative;
+      padding-right: 20px;
+      color: #ffb84d;
+      font-size: 1.1em;
+    }
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    summary::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #f05f5f;
+    }
+    details[open] summary::after {
+      content: '-';
+    }
+    .faq-content {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #555;
+      color: #ddd;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -58,188 +189,220 @@
 
   <!-- NAV LINKS -->
   <div class="nav">
-      <div >
+    <div class="nav-logo">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logo/Elegant logo of Reha Boutique.png" style="width: 155px; max-height: 55px;" alt="Reha Boutique Logo">
+      </a>
+    </div>
+    <a href="#delivery" class="nav-link">Collections & Delivery</a>
+    <a href="#returns" class="nav-link">Returns & Refunds</a>
+    <a href="#terms" class="nav-link">Terms & Conditions</a>
+    <a href="#deliveryReturn" class="nav-link">Delivery Return</a>
+    <a href="#store" class="nav-link">Store Locations</a>
+    <a href="#privacy" class="nav-link">Privacy Policy</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+  </div>
 
-        <a href="index.html" class="brand-logo"><img src="assets/images/logo/Elegant logo of Reha Boutique.png" style=" width: 155px; max-height: 55px;"  alt="Logo"></a>
+  <!-- MAIN CONTAINER (Centers the active box) -->
+  <div class="main-container">
+
+    <div id="delivery" class="section">
+      <div class="content-box">
+        <h2>Collections & Delivery</h2>
+        <ul>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> By using our website, you agree to follow all policies mentioned here.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> All product details, prices, and availability are subject to change without notice.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> We reserve the right to cancel orders due to stock issues, pricing errors, or suspicious activity.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> Users must provide accurate information while placing orders.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> Orders are processed within 1–3 working days.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> Delivery timelines vary by location (usually 3–7 business days).</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> Delays may occur due to external factors like logistics or weather conditions.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> We offer a wide range of latest fashion collections updated regularly.</li>
+        </ul>
       </div>
-    
-      
-    <a href="#delivery">Collections & Delivery</a>
-    <a href="#returns">Returns & Refunds</a>
-    <a href="#terms">Terms & Conditions</a>
-    <a href="#deliveryReturn">Delivery Return</a>
-    <a href="#store">Store Locations</a>
-    <a href="#privacy">Privacy Policy</a>
-    <a href="#faq">FAQ</a>
-    <!-- <a href="#contact">Contact</a>
-    <a href="#login">Login / Register</a> -->
-  </div>
-  </div>
+    </div>
 
-  <!-- SECTIONS -->
+    <div id="returns" class="section">
+      <div class="content-box">
+        <h2>Returns & Refunds</h2>
+        <ul>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> Returns are accepted within 7 days of delivery.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> Items must be unused, unwashed, and in original packaging.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> Refunds will be processed within 5–10 working days after approval.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> Shipping charges are non-refundable (unless product is defective).</li>
+        </ul>
+      </div>
+    </div>
 
-  <div id="delivery" class="section">
-    <h2>Collections & Delivery</h2>
-    <ul style="list-style: none;">
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        By using our website, you agree to follow all policies mentioned here.
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        All product details, prices, and availability are subject to change without notice.
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        We reserve the right to cancel orders due to stock issues, pricing errors, or suspicious activity.
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        Users must provide accurate information while placing orders.
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        Orders are processed within 1–3 working days.
-       
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        Delivery timelines vary by location (usually 3–7 business days).
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
+    <div id="terms" class="section">
+      <div class="content-box">
+        <h2>Terms & Conditions</h2>
+        <ul>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> By using our website, you agree to follow all policies mentioned here.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> All product details, prices, and availability are subject to change without notice.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> We reserve the right to cancel orders due to stock issues, pricing errors, or suspicious activity.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> All website content (images, text, designs) is our property.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> Unauthorized use or copying is strictly prohibited.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> We are not liable for any indirect damages caused by using our services.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="deliveryReturn" class="section">
+      <div class="content-box">
+        <h2>Delivery Return</h2>
+        <ul>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> If delivery fails due to incorrect address, re-shipping charges may apply.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> Refused or undelivered orders will be returned to our warehouse.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> Refund (if applicable) will be processed after deducting shipping costs.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="store" class="section">
+      <div class="content-box">
+        <h2>Store Locations</h2>
+        <ul>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> 
+            <span>Visit our physical stores for an in-person shopping experience. Store timings and <a href="contact.html#location">addresses</a> are available on our contact page.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="privacy" class="section">
+      <div class="content-box">
+        <h2>Privacy Policy</h2>
+        <ul>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> Your privacy is important to us. We secure all personal data.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> We do not sell your personal information to third parties.</li>
+          <li><img src="assets/images/icon/star-3.svg" alt="star icon"> Payment information is encrypted and handled by secure payment gateways.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="faq" class="section">
+      <div class="content-box faq-container">
+        <h1>Frequently Asked Questions</h1>
+
+        <!-- Shipping & Delivery Category -->
+        <div class="faq-category">Shipping & Delivery</div>
         
-      Delays may occur due to external factors like logistics or weather conditions.
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        We offer a wide range of latest fashion collections updated regularly.
-      </li>
-    </ul>
-  </div>
+        <details>
+            <summary>How long will it take to receive my order?</summary>
+            <div class="faq-content">
+                Standard shipping typically takes 3-5 business days. Expedited shipping takes 1-2 business days. International shipping can take anywhere from 7-21 days depending on the destination.
+            </div>
+        </details>
 
+        <details>
+            <summary>Do you ship internationally?</summary>
+            <div class="faq-content">
+                Yes, we ship worldwide! Shipping costs and delivery times will be calculated at checkout based on your location. Please note that international customers are responsible for any customs duties or taxes.
+            </div>
+        </details>
 
-     
+        <details>
+            <summary>How can I track my order?</summary>
+            <div class="faq-content">
+                Once your order has shipped, you will receive an email with a tracking number and a link to track your package. You can also view tracking information by logging into your account on our website.
+            </div>
+        </details>
 
+        <!-- Returns & Exchanges Category -->
+        <div class="faq-category">Returns & Exchanges</div>
 
-  <div id="terms" class="section">
-    <h2>Terms & Conditions</h2>
-      <ul style="list-style: none;">
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        By using our website, you agree to follow all policies mentioned here.
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        All product details, prices, and availability are subject to change without notice.
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        We reserve the right to cancel orders due to stock issues, pricing errors, or suspicious activity.
-      </li>
-            <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-              All website content (images, text, designs) is our property.
-            </li>
-            <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-              Unauthorized use or copying is strictly prohibited.
-</li>
-<li><img src="assets/images/icon/star-3.svg" alt="star icon">
-  We are not liable for any indirect damages caused by using our services.
-      </li>
- 
-    </ul>
-  </div>
+        <details>
+            <summary>What is your return policy?</summary>
+            <div class="faq-content">
+                We accept returns within 7 days of delivery. Items must be unworn, unwashed, and have the original tags attached. Final sale items and intimates cannot be returned.
+            </div>
+        </details>
 
+        <details>
+            <summary>How do I start a return or exchange?</summary>
+            <div class="faq-content">
+                To initiate a return or exchange, please contact our support team with your order number and email address, and we will guide you through the process.
+            </div>
+        </details>
 
-  <div id="returns" class="section">
-    <h2>Return</h2>
-  <ul style="list-style: none;">
-    
-       <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-       
-        Returns are accepted within 7 days of delivery.
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        Items must be unused, unwashed, and in original packaging.
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        Refunds will be processed within 5–10 working days after approval.
-        
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        Shipping charges are non-refundable (unless product is defective).
-      </li>
-    </ul>
-   </div>
+        <!-- Sizing & Fit Category -->
+        <div class="faq-category">Sizing & Fit</div>
 
- 
- 
+        <details>
+            <summary>How do I know what size to order?</summary>
+            <div class="faq-content">
+                We provide a detailed Size Guide on every product page with exact measurements. If you are between sizes, we generally recommend sizing up for a looser fit or sizing down for a more tailored look.
+            </div>
+        </details>
 
-   <div id="deliveryReturn" class="section">
-    <h2>Delivery Return</h2>
-  <ul style="list-style: none;">
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        If delivery fails due to incorrect address, re-shipping charges may apply.
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        Refused or undelivered orders will be returned to our warehouse.
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-        Refund (if applicable) will be processed after deducting shipping costs..
-      </li>
-      </ul>
-  </div>
+        <!-- Orders & Payment Category -->
+        <div class="faq-category">Orders & Payment</div>
 
-  <div id="store" class="section">
-    <h2>Store Locations</h2>
-    <ul style="list-style: none;">
-           <li><img src="assets/images/icon/star-3.svg" alt="star icon">Visit our physical stores for in-person shopping experience.
-Store timings and <a href="contact.html#location" >addresse </a>are available on the website.
-      </li>
-      
-    </ul>
-   </div>
+        <details>
+            <summary>Can I change or cancel my order after placing it?</summary>
+            <div class="faq-content">
+                We process orders very quickly. If you need to make a change or cancel your order, please contact our support team within 1 hour of placing it. Once an order has been processed for shipping, it cannot be changed.
+            </div>
+        </details>
 
-  <div id="privacy" class="section">
-    <h2>Privacy Policy</h2>
-  
-    <ul style="list-style: none;">
-            <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">     
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-      </li>
-    </ul>
-  </div>
+        <details>
+            <summary>What payment methods do you accept?</summary>
+            <div class="faq-content">
+                We accept all major credit cards, PayPal, and popular digital wallets. All transactions are securely encrypted.
+            </div>
+        </details>
 
-  <div id="faq" class="section">
-    <h2>FAQ</h2>
-    
-    <ul style="list-style: none;">
-           <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">     
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-      </li>
-      <li><img src="assets/images/icon/star-3.svg" alt="star icon">
-      </li>
-    </ul>
-  </div>
+      </div>
+    </div>
 
+  </div> <!-- END MAIN CONTAINER -->
 
-  <!-- <div id="login" class="section">
-    <h2>Login / Register</h2>
-    <p>Login form or info...</p>
-  </div> -->
+  <!-- JAVASCRIPT FOR TOGGLING SECTIONS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('.section');
+
+      function activateSection(id) {
+        // Hide all sections
+        sections.forEach(sec => sec.classList.remove('active'));
+        // Remove active class from all links
+        links.forEach(link => link.classList.remove('active-link'));
+
+        // Show the target section
+        const targetSection = document.getElementById(id);
+        if (targetSection) {
+          targetSection.classList.add('active');
+        }
+
+        // Highlight the current link in the navbar
+        const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+        if (activeLink) {
+          activeLink.classList.add('active-link');
+        }
+      }
+
+      // Add click event to all navbar links
+      links.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault(); // Stop page from jumping down
+          const targetId = link.getAttribute('href').substring(1);
+          activateSection(targetId);
+          // Update URL silently
+          history.pushState(null, null, `#${targetId}`); 
+        });
+      });
+
+      // Load specific section if linked directly (e.g. page.html#faq)
+      const initialHash = window.location.hash.substring(1);
+      if (initialHash && document.getElementById(initialHash)) {
+        activateSection(initialHash);
+      } else {
+        activateSection('delivery'); // Default section to show on load
+      }
+    });
+  </script>
 
 </body>
 </html>
